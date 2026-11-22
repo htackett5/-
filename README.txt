@@ -1,0 +1,1 @@
+Replace index.html in your GitHub repository root and add theme-dark-red-v7.css beside it. Do not delete assets, script.js, or other files. Commit and Push origin. The unique CSS filename avoids browsers reusing cached old styling. This includes school logos, ROTC caption updates, and schematic image links.
