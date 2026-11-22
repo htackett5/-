@@ -28,8 +28,3 @@ The portfolio is public. Confirm permission to post group photos, class assignme
 
 ## Version 5 update — FPGA Lunar Lander
 The FPGA Lunar Lander card now links its actual SystemVerilog modules under `assets/code/lunar-lander/`, plus the uploaded BCD arithmetic lab notebook. See the folder README for missing board-specific dependencies.
-
-
-## Version 6 — dark/red redesign
-
-Uses a charcoal background, bold League Spartan headings and vivid red accents throughout the homepage, project cards, dialogs, and galleries. All existing media and project source files from Version 5 are retained. The site imports free Google Fonts (League Spartan and DM Sans); if a visitor is offline, system-font fallbacks appear. The uploaded font specimen is a visual reference only, not an included font file.
