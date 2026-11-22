@@ -72,3 +72,25 @@ document.querySelectorAll('.project-card').forEach(card => {
 close.addEventListener('click', () => dialog.close());
 dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
 dialog.addEventListener('close', () => previousFocus?.focus());
+
+// Optional video inside project detail modal.
+const dialogMedia = document.querySelector('#dialog-media');
+document.querySelectorAll('.project-card .project-open').forEach(button => {
+  button.addEventListener('click', () => {
+    const key = button.closest('.project-card').dataset.project;
+    const video = key === 'equalizer' ? 'equalizer-demo' : key === 'sensor' ? 'pulse-sensor-demo' : null;
+    dialogMedia.replaceChildren();
+    dialogMedia.hidden = !video;
+    if (video) {
+      const player = document.createElement('video');
+      player.controls = true;
+      player.preload = 'metadata';
+      player.playsInline = true;
+      player.poster = `assets/${video}.jpg`;
+      player.src = `assets/${video}.mp4`;
+      player.setAttribute('aria-label', key === 'equalizer' ? 'Audio equalizer demo' : 'Optical pulse sensor demo');
+      dialogMedia.append(player);
+    }
+  });
+});
+dialog.addEventListener('close', () => {dialogMedia.querySelector('video')?.pause();});
