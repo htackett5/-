@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 
 <html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="#111215" name="theme-color"/><meta content="Engineering, music, and hands-on builds by Helen Tackett." name="description"/><title>Experience · Helen Tackett</title><link href="assets/favicon.svg" rel="icon"/><link href="site-v9.css" rel="stylesheet"/><script defer="" src="site-v9.js"></script><style>
-/* Align the Experience heading with the Education heading inside its padded panel. */
+/* Align the Experience column with the top and bottom of the Education panel. */
 @media (min-width: 801px) {
-  .two-col > div:first-child { padding-top: 35px; }
+  .two-col > div:first-child {
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+  }
 }
+
 .experience-item .btn{margin-top:14px;padding:9px 13px;font-size:10px}
 .school-entry{display:grid;grid-template-columns:104px minmax(0,1fr);align-items:center;gap:20px}
 .school-logo-wrap{min-height:76px;display:grid;place-items:center;padding:13px 8px;background:#111215;border:1px solid #3e3e43;border-radius:3px}
