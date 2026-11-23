@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="#111215" name="theme-color"/><meta content="Engineering, music, and hands-on builds by Helen Tackett." name="description"/><title>FPGA Lunar Lander · Helen Tackett</title><link href="../assets/favicon.svg" rel="icon"/><link href="../site-v9.css" rel="stylesheet"/><script defer="" src="../site-v9.js"></script></head><body><a class="skip" href="#main">Skip to content</a><header class="site-header"><div class="wrap nav-row"><a class="logo" href="../index.html">HT<span>.</span></a><button aria-controls="main-nav" aria-expanded="false" class="mobile-menu" type="button">Menu <span>☰</span></button><nav aria-label="Main navigation" id="main-nav"><a href="../index.html">Home</a><a href="../projects.html">Engineering</a><a href="../experience.html">Experience</a><a href="../music.html">Music</a><a href="../metal-earth.html">Metal Earth</a><a href="../about.html">About</a></nav><a class="nav-contact" href="../assets/docs/helen-tackett-resume.pdf">Résumé ↗</a></div></header><main id="main"><section class="wrap section-pad case-intro"><a class="back-link" href="../projects.html">← ALL PROJECTS</a><p class="kicker">DIGITAL DESIGN / SYSTEMVERILOG</p><h1>FPGA LUNAR LANDER</h1><p class="lede">A modular game implemented in RTL with custom arithmetic, state and display logic.</p></section><section class="wrap case-layout"><div><div class="case-cover"><img alt="Illustrative FPGA development board; not a photograph of the board used in the Lunar Lander project" loading="lazy" src="../assets/fpga-board-illustrative.webp"/></div><p class="illustrative-note">Representative FPGA board image — the actual project is documented through its SystemVerilog source files.</p></div><aside class="case-aside"><p class="kicker">DESIGN / PROCESS / RESULTS</p><h2>BEHIND THE <span>BUILD.</span></h2>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="#111215" name="theme-color"/><meta content="Engineering, music, and hands-on builds by Helen Tackett." name="description"/><title>FPGA Lunar Lander · Helen Tackett</title><link href="../assets/favicon.svg" rel="icon"/><link href="../site-v9.css" rel="stylesheet"/><script defer="" src="../site-v9.js"></script><style>
+.rtl-view-button{width:100%;color:inherit;text-align:left;cursor:pointer;font-family:inherit}.rtl-view-button:focus-visible{outline:2px solid #ff4855;outline-offset:2px}
+.rtl-dialog{background:#18191d;color:#f4f1ee;border:1px solid #44444a;padding:0;width:min(960px,calc(100vw - 28px));max-height:90vh;box-shadow:0 24px 90px #000b}.rtl-dialog::backdrop{background:#000c}
+.rtl-dialog-inner{display:flex;flex-direction:column;max-height:90vh}.rtl-dialog-header{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:17px 20px;border-bottom:1px solid #404046}.rtl-dialog-header h2{margin:0 auto 0 0;font-size:clamp(17px,3vw,25px);overflow-wrap:anywhere}.rtl-dialog-actions{display:flex;align-items:center;gap:8px}.rtl-dialog-actions button{border:1px solid #ff4855;padding:8px 12px;background:transparent;color:#fff;font:700 12px inherit;cursor:pointer}.rtl-dialog-actions button:hover{background:#ff4855;color:#151515}.rtl-dialog-actions .rtl-close{background:#ff4855;color:#111}
+.rtl-dialog pre{margin:0;padding:22px;overflow:auto;tab-size:4;font:13px/1.65 Consolas,'Cascadia Code',monospace;color:#e9e5ea;white-space:pre;flex:1;min-height:0}.rtl-dialog-foot{font-size:11px;color:#aaa;padding:10px 20px;border-top:1px solid #404046}
+@media(max-width:600px){.rtl-dialog-header{padding:12px}.rtl-dialog pre{font-size:11px;padding:12px}}
+</style></head><body><a class="skip" href="#main">Skip to content</a><header class="site-header"><div class="wrap nav-row"><a class="logo" href="../index.html">HT<span>.</span></a><button aria-controls="main-nav" aria-expanded="false" class="mobile-menu" type="button">Menu <span>☰</span></button><nav aria-label="Main navigation" id="main-nav"><a href="../index.html">Home</a><a href="../projects.html">Engineering</a><a href="../experience.html">Experience</a><a href="../music.html">Music</a><a href="../metal-earth.html">Metal Earth</a><a href="../about.html">About</a></nav><a class="nav-contact" href="../assets/docs/helen-tackett-resume.pdf">Résumé ↗</a></div></header><main id="main"><section class="wrap section-pad case-intro"><a class="back-link" href="../projects.html">← ALL PROJECTS</a><p class="kicker">DIGITAL DESIGN / SYSTEMVERILOG</p><h1>FPGA LUNAR LANDER</h1><p class="lede">A modular game implemented in RTL with custom arithmetic, state and display logic.</p></section><section class="wrap case-layout"><div><div class="case-cover"><img alt="Illustrative FPGA development board; not a photograph of the board used in the Lunar Lander project" loading="lazy" src="../assets/fpga-board-illustrative.webp"/></div><p class="illustrative-note">Representative FPGA board image — the actual project is documented through its SystemVerilog source files.</p></div><aside class="case-aside"><p class="kicker">DESIGN / PROCESS / RESULTS</p><h2>BEHIND THE <span>BUILD.</span></h2>
 <div class="build-story" style="margin:32px 0 0">
   <section class="build-story-section" style="margin:0 0 30px">
     <h3 class="kicker" style="font-size:11px;line-height:1.4;margin:0 0 12px">THE DESIGN</h3>
@@ -13,4 +19,451 @@
     <h3 class="kicker" style="font-size:11px;line-height:1.4;margin:0 0 12px">THE RESULT</h3>
     <p style="font-size:14px;line-height:1.8;color:#d1ced2;margin:0">Integrated the modules into an FPGA-based game design. The source code documents the individual modules and their connections.</p>
   </section>
-</div><h3 class="resources-title">DOCUMENTATION &amp; SOURCE</h3><div class="resources"><a class="resource" href="../assets/code/lunar-lander/lunarlander.sv" rel="noopener" target="_blank">Top-level RTL <span>↗</span></a><a class="resource" href="../assets/code/lunar-lander/bcd_arithmetic.sv" rel="noopener" target="_blank">BCD arithmetic <span>↗</span></a><a class="resource" href="../assets/code/lunar-lander/ll_alu.sv" rel="noopener" target="_blank">ALU <span>↗</span></a><a class="resource" href="../assets/code/lunar-lander/ll_control.sv" rel="noopener" target="_blank">Control <span>↗</span></a><a class="resource" href="../assets/code/lunar-lander/ll_display.sv" rel="noopener" target="_blank">Display <span>↗</span></a><a class="resource" href="../assets/code/lunar-lander/ll_memory.sv" rel="noopener" target="_blank">Memory <span>↗</span></a><a class="resource" href="../assets/code/lunar-lander/README.md" rel="noopener" target="_blank">RTL README <span>↗</span></a><a class="resource" href="../assets/code/lunar-lander/lab10-bcd-arithmetic.ipynb" rel="noopener" target="_blank">Lab 10 notebook <span>↗</span></a></div></aside></section><div class="wrap bottom-nav"><a href="../projects.html">← Back to all projects</a><a href="../index.html">Home ↗</a></div></main><footer class="footer"><div class="wrap footer-grid"><strong>HT<span class="red">.</span> / HELEN TACKETT</strong><span>Engineer by practice. Builder since childhood.</span><a href="https://www.linkedin.com/in/helen-tackett" rel="noopener" target="_blank">LinkedIn ↗</a><a href="mailto:hftackett@gmail.com">Email ↗</a></div></footer><dialog aria-label="Enlarged photograph" class="lightbox"><button aria-label="Close enlarged image" class="lightbox-close" type="button">✕</button><img alt=""/><p></p></dialog></body></html>
+</div><h3 class="resources-title">DOCUMENTATION &amp; SOURCE</h3><div class="resources"><button class="resource rtl-view-button" type="button" data-rtl="lunarlander.sv" aria-haspopup="dialog">Top-level RTL <span>↗</span></button><button class="resource rtl-view-button" type="button" data-rtl="bcd_arithmetic.sv" aria-haspopup="dialog">BCD arithmetic <span>↗</span></button><button class="resource rtl-view-button" type="button" data-rtl="ll_alu.sv" aria-haspopup="dialog">ALU <span>↗</span></button><button class="resource rtl-view-button" type="button" data-rtl="ll_control.sv" aria-haspopup="dialog">Control <span>↗</span></button><button class="resource rtl-view-button" type="button" data-rtl="ll_display.sv" aria-haspopup="dialog">Display <span>↗</span></button><button class="resource rtl-view-button" type="button" data-rtl="ll_memory.sv" aria-haspopup="dialog">Memory <span>↗</span></button><a class="resource" href="../assets/code/lunar-lander/README.md" rel="noopener" target="_blank">RTL README <span>↗</span></a><a class="resource" href="../assets/code/lunar-lander/lab10-bcd-arithmetic.ipynb" rel="noopener" target="_blank">Lab 10 notebook <span>↗</span></a></div></aside></section><div class="wrap bottom-nav"><a href="../projects.html">← Back to all projects</a><a href="../index.html">Home ↗</a></div></main><footer class="footer"><div class="wrap footer-grid"><strong>HT<span class="red">.</span> / HELEN TACKETT</strong><span>Engineer by practice. Builder since childhood.</span><a href="https://www.linkedin.com/in/helen-tackett" rel="noopener" target="_blank">LinkedIn ↗</a><a href="mailto:hftackett@gmail.com">Email ↗</a></div></footer><dialog aria-label="Enlarged photograph" class="lightbox"><button aria-label="Close enlarged image" class="lightbox-close" type="button">✕</button><img alt=""/><p></p></dialog><dialog class="rtl-dialog" id="rtl-dialog" aria-labelledby="rtl-dialog-title">
+<div class="rtl-dialog-inner"><div class="rtl-dialog-header"><h2 id="rtl-dialog-title">SOURCE CODE</h2><div class="rtl-dialog-actions"><button id="rtl-copy" type="button">Copy code</button><button class="rtl-close" id="rtl-close" type="button" aria-label="Close source code">✕</button></div></div><pre id="rtl-code" tabindex="0"></pre><div class="rtl-dialog-foot">SystemVerilog source · Read-only viewer · Esc to close</div></div>
+</dialog>
+<template id="rtl-lunarlander"><pre>module lunarlander #(
+  parameter FUEL=16&#x27;h0800,
+  parameter ALTITUDE=16&#x27;h4500,
+  parameter VELOCITY=16&#x27;h0000,
+  parameter THRUST=16&#x27;h0005,
+  parameter GRAVITY=16&#x27;h0005
+)(
+  input logic hz100, reset,
+  input logic [19:0] in,
+  output logic [7:0] ss7, ss6, ss5,
+  output logic [7:0] ss3, ss2, ss1, ss0,
+  output logic red, green
+);
+
+  logic slowclk;
+  logic keyclk;
+  logic [4:0] keyout;
+
+  logic [15:0] alt;
+  logic [15:0] vel;
+  logic [15:0] fuel;
+  logic [15:0] thrust;
+
+  logic [15:0] alt_n;
+  logic [15:0] vel_n;
+  logic [15:0] fuel_n;
+  logic [15:0] thrust_n;
+
+  logic land;
+  logic crash;
+  logic wen;
+
+  clock_psc u_clk (
+    .clk(hz100),
+    .rst(reset),
+    .lim(8&#x27;d24),
+    .hzX(slowclk)
+  );
+
+  keysync u_keysync (
+    .clk(hz100),
+    .rst(reset),
+    .keyin(in),
+    .keyout(keyout),
+    .keyclk(keyclk)
+  );
+
+  always_ff @(posedge keyclk or posedge reset) begin
+    if (reset)
+      thrust_n &lt;= THRUST;
+    else if (~keyout[4])
+      thrust_n &lt;= {12&#x27;b0, keyout[3:0]};
+  end
+
+  ll_memory #(
+    .ALTITUDE(ALTITUDE),
+    .VELOCITY(VELOCITY),
+    .FUEL(FUEL),
+    .THRUST(THRUST)
+  ) u_mem (
+    .clk(slowclk),
+    .rst(reset),
+    .wen(wen),
+    .alt_n(alt_n),
+    .vel_n(vel_n),
+    .fuel_n(fuel_n),
+    .thrust_n(thrust_n),
+    .alt(alt),
+    .vel(vel),
+    .fuel(fuel),
+    .thrust(thrust)
+  );
+
+  ll_alu #(
+    .GRAVITY(GRAVITY)
+  ) u_alu (
+    .alt(alt),
+    .vel(vel),
+    .fuel(fuel),
+    .thrust(thrust),
+    .alt_n(alt_n),
+    .vel_n(vel_n),
+    .fuel_n(fuel_n)
+  );
+
+  ll_control u_ctrl (
+    .clk(slowclk),
+    .rst(reset),
+    .alt(alt),
+    .vel(vel),
+    .land(land),
+    .crash(crash),
+    .wen(wen)
+  );
+
+  ll_display u_disp (
+    .clk(keyclk),
+    .rst(reset),
+    .land(land),
+    .crash(crash),
+    .disp_ctrl({keyout == 5&#x27;d19, keyout == 5&#x27;d18, keyout == 5&#x27;d17, keyout == 5&#x27;d16}),
+    .alt(alt),
+    .vel(vel),
+    .fuel(fuel),
+    .thrust(thrust),
+    .ss7(ss7),
+    .ss6(ss6),
+    .ss5(ss5),
+    .ss3(ss3),
+    .ss2(ss2),
+    .ss1(ss1),
+    .ss0(ss0),
+    .red(red),
+    .green(green)
+  );
+
+endmodule</pre></template>
+<template id="rtl-bcd_arithmetic"><pre>module fa(
+  input logic a,
+  input logic b,
+  input logic ci,
+  output logic s,
+  output logic co
+);
+  assign s = a ^ b ^ ci;
+  assign co = (a &amp; b) | (a &amp; ci) | (b &amp; ci);
+endmodule
+
+module fa4(
+  input logic [3:0] a,
+  input logic [3:0] b,
+  input logic ci,
+  output logic [3:0] s,
+  output logic co
+);
+  logic c1, c2, c3;
+
+  fa f0 (.a(a[0]), .b(b[0]), .ci(ci), .s(s[0]), .co(c1));
+  fa f1 (.a(a[1]), .b(b[1]), .ci(c1), .s(s[1]), .co(c2));
+  fa f2 (.a(a[2]), .b(b[2]), .ci(c2), .s(s[2]), .co(c3));
+  fa f3 (.a(a[3]), .b(b[3]), .ci(c3), .s(s[3]), .co(co));
+
+endmodule
+
+module bcdadd1(
+  input logic [3:0] a,
+  input logic [3:0] b,
+  input logic ci,
+  output logic [3:0] s,
+  output logic co
+);
+  logic [3:0] sum0;
+  logic c0;
+  logic fix;
+  logic [3:0] corr;
+
+  fa4 u0 (.a(a), .b(b), .ci(ci), .s(sum0), .co(c0));
+
+  assign fix = c0 | (sum0 &gt; 4&#x27;d9);
+  assign corr = fix ? 4&#x27;b0110 : 4&#x27;b0000;
+
+  fa4 u1 (.a(sum0), .b(corr), .ci(1&#x27;b0), .s(s), .co());
+
+  assign co = fix;
+
+endmodule
+
+module bcdadd4(
+  input logic [15:0] a,
+  input logic [15:0] b,
+  input logic ci,
+  output logic [15:0] s,
+  output logic co
+);
+  logic c1, c2, c3;
+
+  bcdadd1 d0 (.a(a[3:0]),    .b(b[3:0]),    .ci(ci), .s(s[3:0]),    .co(c1));
+  bcdadd1 d1 (.a(a[7:4]),    .b(b[7:4]),    .ci(c1), .s(s[7:4]),    .co(c2));
+  bcdadd1 d2 (.a(a[11:8]),   .b(b[11:8]),   .ci(c2), .s(s[11:8]),   .co(c3));
+  bcdadd1 d3 (.a(a[15:12]),  .b(b[15:12]),  .ci(c3), .s(s[15:12]),  .co(co));
+
+endmodule
+
+module bcd9comp1(
+  input logic [3:0] in,
+  output logic [3:0] out
+);
+  always_comb begin
+    case (in)
+      4&#x27;d0: out = 4&#x27;d9;
+      4&#x27;d1: out = 4&#x27;d8;
+      4&#x27;d2: out = 4&#x27;d7;
+      4&#x27;d3: out = 4&#x27;d6;
+      4&#x27;d4: out = 4&#x27;d5;
+      4&#x27;d5: out = 4&#x27;d4;
+      4&#x27;d6: out = 4&#x27;d3;
+      4&#x27;d7: out = 4&#x27;d2;
+      4&#x27;d8: out = 4&#x27;d1;
+      4&#x27;d9: out = 4&#x27;d0;
+      default: out = 4&#x27;d0;
+    endcase
+  end
+endmodule
+
+module bcdaddsub4(
+  input logic [15:0] a,
+  input logic [15:0] b,
+  input logic op,
+  output logic [15:0] s
+);
+  logic [15:0] bcomp;
+  logic [15:0] bsel;
+
+  bcd9comp1 c0 (.in(b[3:0]),    .out(bcomp[3:0]));
+  bcd9comp1 c1 (.in(b[7:4]),    .out(bcomp[7:4]));
+  bcd9comp1 c2 (.in(b[11:8]),   .out(bcomp[11:8]));
+  bcd9comp1 c3 (.in(b[15:12]),  .out(bcomp[15:12]));
+
+  assign bsel = op ? bcomp : b;
+
+  bcdadd4 u0 (.a(a), .b(bsel), .ci(op), .s(s), .co());
+
+endmodule</pre></template>
+<template id="rtl-ll_alu"><pre>module ll_alu #(
+  parameter GRAVITY=16&#x27;h0005
+)(
+  input logic [15:0] alt,
+  input logic [15:0] vel,
+  input logic [15:0] fuel,
+  input logic [15:0] thrust,
+  output logic [15:0] alt_n,
+  output logic [15:0] vel_n,
+  output logic [15:0] fuel_n
+);
+
+  logic [15:0] alt_c;
+  logic [15:0] vel_c0;
+  logic [15:0] vel_c;
+  logic [15:0] fuel_c;
+  logic [15:0] thrust_eff;
+
+  assign thrust_eff = (fuel == 16&#x27;h0000) ? 16&#x27;h0000 : thrust;
+
+  bcdaddsub4 u0 (.a(alt),    .b(vel),        .op(1&#x27;b0), .s(alt_c));
+  bcdaddsub4 u1 (.a(vel),    .b(GRAVITY),    .op(1&#x27;b1), .s(vel_c0));
+  bcdaddsub4 u2 (.a(vel_c0), .b(thrust_eff), .op(1&#x27;b0), .s(vel_c));
+  bcdaddsub4 u3 (.a(fuel),   .b(thrust),     .op(1&#x27;b1), .s(fuel_c));
+
+  always_comb begin
+    if ((alt_c[15:12] == 4&#x27;d9) || (alt_c == 16&#x27;h0000)) begin
+      alt_n = 16&#x27;h0000;
+      vel_n = 16&#x27;h0000;
+    end else begin
+      alt_n = alt_c;
+      vel_n = vel_c;
+    end
+
+    if ((fuel_c[15:12] == 4&#x27;d9) || (fuel_c == 16&#x27;h0000))
+      fuel_n = 16&#x27;h0000;
+    else
+      fuel_n = fuel_c;
+  end
+
+endmodule</pre></template>
+<template id="rtl-ll_control"><pre>module ll_control (
+  input logic clk,
+  input logic rst,
+  input logic [15:0] alt,
+  input logic [15:0] vel,
+  output logic land,
+  output logic crash,
+  output logic wen
+);
+
+  logic [15:0] alt_vel;
+
+  bcdaddsub4 u0 (.a(alt), .b(vel), .op(1&#x27;b0), .s(alt_vel));
+
+  always_ff @(posedge clk or posedge rst) begin
+    if (rst) begin
+      land &lt;= 1&#x27;b0;
+      crash &lt;= 1&#x27;b0;
+      wen &lt;= 1&#x27;b0;
+    end else if ((alt_vel[15:12] == 4&#x27;d9) || (alt_vel == 16&#x27;h0000)) begin
+      wen &lt;= 1&#x27;b0;
+      if (vel &lt; 16&#x27;h9970) begin
+        crash &lt;= 1&#x27;b1;
+        land &lt;= 1&#x27;b0;
+      end else begin
+        crash &lt;= 1&#x27;b0;
+        land &lt;= 1&#x27;b1;
+      end
+    end else begin
+      land &lt;= 1&#x27;b0;
+      crash &lt;= 1&#x27;b0;
+      wen &lt;= 1&#x27;b1;
+    end
+  end
+
+endmodule</pre></template>
+<template id="rtl-ll_display"><pre>module ll_display (
+  input logic clk,
+  input logic rst,
+  input logic land,
+  input logic crash,
+  input logic [3:0] disp_ctrl,
+  input logic [15:0] alt,
+  input logic [15:0] vel,
+  input logic [15:0] fuel,
+  input logic [15:0] thrust,
+  output logic [7:0] ss7,
+  output logic [7:0] ss6,
+  output logic [7:0] ss5,
+  output logic [7:0] ss3,
+  output logic [7:0] ss2,
+  output logic [7:0] ss1,
+  output logic [7:0] ss0,
+  output logic red,
+  output logic green
+);
+
+  logic [3:0] mode;
+  logic [15:0] num;
+  logic [15:0] vel_mag;
+  logic neg_vel;
+
+  logic [6:0] seg0;
+  logic [6:0] seg1;
+  logic [6:0] seg2;
+  logic [6:0] seg3;
+
+  bcdaddsub4 uabs (.a(16&#x27;h0000), .b(vel), .op(1&#x27;b1), .s(vel_mag));
+
+  always_ff @(posedge clk or posedge rst) begin
+    if (rst)
+      mode &lt;= 4&#x27;b1000;
+    else if (disp_ctrl != 4&#x27;b0000)
+      mode &lt;= disp_ctrl;
+  end
+
+  always_comb begin
+    neg_vel = 1&#x27;b0;
+    num = alt;
+    {ss7, ss6, ss5} = 24&#x27;b01110111_00111000_01111000;
+
+    case (mode)
+      4&#x27;b1000: begin
+        num = alt;
+        {ss7, ss6, ss5} = 24&#x27;b01110111_00111000_01111000;
+      end
+      4&#x27;b0100: begin
+        neg_vel = (vel[15:12] == 4&#x27;d9);
+        num = neg_vel ? vel_mag : vel;
+        {ss7, ss6, ss5} = 24&#x27;b00111110_01111001_00111000;
+      end
+      4&#x27;b0010: begin
+        num = fuel;
+        {ss7, ss6, ss5} = 24&#x27;b01101111_01110111_01101101;
+      end
+      4&#x27;b0001: begin
+        num = thrust;
+        {ss7, ss6, ss5} = 24&#x27;b01111000_01110110_01010000;
+      end
+      default: begin
+        num = alt;
+        {ss7, ss6, ss5} = 24&#x27;b01110111_00111000_01111000;
+      end
+    endcase
+  end
+
+  ssdec d0 (.in(num[3:0]),   .enable(1&#x27;b1),        .out(seg0));
+  ssdec d1 (.in(num[7:4]),   .enable(|num[15:4]),  .out(seg1));
+  ssdec d2 (.in(num[11:8]),  .enable(|num[15:8]),  .out(seg2));
+  ssdec d3 (.in(num[15:12]), .enable(|num[15:12]), .out(seg3));
+
+  assign ss0 = {1&#x27;b0, seg0};
+  assign ss1 = {1&#x27;b0, seg1};
+  assign ss2 = {1&#x27;b0, seg2};
+  assign ss3 = neg_vel ? 8&#x27;b01000000 : {1&#x27;b0, seg3};
+
+  assign red = rst ? 1&#x27;b0 : crash;
+  assign green = rst ? 1&#x27;b0 : land;
+
+endmodule</pre></template>
+<template id="rtl-ll_memory"><pre>module ll_memory #(
+  parameter ALTITUDE=16&#x27;h4500,
+  parameter VELOCITY=16&#x27;h0000,
+  parameter FUEL=16&#x27;h0800,
+  parameter THRUST=16&#x27;h0005
+)(
+  input logic clk,
+  input logic rst,
+  input logic wen,
+  input logic [15:0] alt_n,
+  input logic [15:0] vel_n,
+  input logic [15:0] fuel_n,
+  input logic [15:0] thrust_n,
+  output logic [15:0] alt,
+  output logic [15:0] vel,
+  output logic [15:0] fuel,
+  output logic [15:0] thrust
+);
+
+  always_ff @(posedge clk or posedge rst) begin
+    if (rst) begin
+      alt &lt;= ALTITUDE;
+      vel &lt;= VELOCITY;
+      fuel &lt;= FUEL;
+      thrust &lt;= THRUST;
+    end else if (wen) begin
+      alt &lt;= alt_n;
+      vel &lt;= vel_n;
+      fuel &lt;= fuel_n;
+      thrust &lt;= thrust_n;
+    end
+  end
+
+endmodule</pre></template>
+<script>
+(() => {
+  const dialog=document.getElementById('rtl-dialog');
+  const code=document.getElementById('rtl-code');
+  const heading=document.getElementById('rtl-dialog-title');
+  const copy=document.getElementById('rtl-copy');
+  let previousFocus=null;
+  document.querySelectorAll('[data-rtl]').forEach(button=>button.addEventListener('click',()=>{
+    const filename=button.dataset.rtl;
+    const template=document.getElementById('rtl-'+filename.slice(0,-3));
+    if(!template) return;
+    previousFocus=document.activeElement;
+    heading.textContent=filename;
+    code.textContent=template.content.querySelector('pre').textContent;
+    code.scrollTop=0;code.scrollLeft=0;
+    copy.textContent='Copy code';
+    dialog.showModal();
+  }));
+  document.getElementById('rtl-close').addEventListener('click',()=>dialog.close());
+  dialog.addEventListener('close',()=>previousFocus?.focus());
+  dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
+  copy.addEventListener('click',async()=>{
+    try{await navigator.clipboard.writeText(code.textContent);copy.textContent='Copied!';}
+    catch(e){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(code);selection.removeAllRanges();selection.addRange(range);copy.textContent='Select and copy';}
+  });
+})();
+</script></body></html>
