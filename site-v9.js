@@ -33,7 +33,7 @@ const b=document.querySelector('.mobile-menu'),n=document.querySelector('#main-n
   headerRow.querySelectorAll(':scope > a.nav-contact, :scope > a.nav-resume-desktop').forEach(el=>el.remove());
   const actions=document.createElement('div');actions.className='nav-actions';
   const resume=document.createElement('a');
-  resume.href='https://htackett5.github.io/-/assets/docs/helen-tackett-resume.pdf';
+  resume.href='https://htackett5.github.io/assets/docs/helen-tackett-resume.pdf';
   resume.className='nav-action-link';resume.textContent='Résumé ↗';
   resume.target='_blank';resume.rel='noopener noreferrer';
   resume.setAttribute('aria-label','Open résumé PDF in a new tab');

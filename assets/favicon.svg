@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#365e51"/><text x="9" y="43" font-size="32" font-weight="bold" font-family="Arial,sans-serif" fill="#fff">HT</text><circle cx="55" cy="46" r="4" fill="#bc725c"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<title>HT. — Helen Tackett</title>
+<rect width="64" height="64" rx="13" fill="#111215"/>
+<rect x="1.5" y="1.5" width="61" height="61" rx="11.5" fill="none" stroke="#38383f" stroke-width="2"/>
+<path d="M11 18h7v11h10V18h7v29h-7V35H18v12h-7V18zm28 0h20v6.5h-6.5V47h-7V24.5H39V18z" fill="#F4F1EE"/>
+<circle cx="57" cy="51" r="4.6" fill="#FF4855"/>
+</svg>
