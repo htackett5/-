@@ -1,0 +1,16 @@
+ROOT GITHUB PAGES REPAIR - htackett5.github.io
+
+Your repository name is already correct: htackett5.github.io
+
+1. In GitHub Desktop, confirm CURRENT REPOSITORY is htackett5.github.io
+   (not the old repository named -).
+2. Repository > Show in Explorer. You should see a .git folder.
+3. Extract this ZIP, open the extracted folder, select the CONTENTS (not the folder itself) and paste into the repository root beside .git.
+4. Replace existing HTML/CSS/JS when Windows asks. Merge projects and assets.
+5. Commit to main > Push origin.
+6. On GitHub, Settings > Pages: Deploy from a branch, main, /(root).
+7. Check https://htackett5.github.io/ and https://htackett5.github.io/assets/docs/helen-tackett-resume.pdf
+
+IMPORTANT: This is a CODE REPAIR PATCH, not a full export. It intentionally does not include your existing photos, videos and reports. Keep the existing assets folder, including assets/docs/helen-tackett-resume.pdf. If the PDF test is 404, make sure that exact PDF exists in assets/docs in your repository.
+
+Do not upload renamed files like index(2).html or site-v9(1).js. The ZIP already has correct filenames.
